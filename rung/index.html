@@ -1,0 +1,246 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Rung: an AI math tutor that gives hints, not answers | Nkiru Anizoba</title>
+  <meta name="description" content="Case study: Rung is a public AI math tutor for grade 6 and 7 ratios. Code grades every answer, the AI only writes the words, and a 32-case eval checks it.">
+  <meta property="og:title" content="Rung: an AI math tutor that gives hints, not answers">
+  <meta property="og:description" content="Case study by Nkiru Anizoba. A four-rung hint ladder, code-checked grading, and a 32-case eval with 0 answer leaks.">
+  <meta property="og:url" content="https://nkiruanizoba.com/rung/">
+  <meta property="og:type" content="article">
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..700;1,9..144,400..700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="logo" href="/">Nkiru Anizoba</a>
+    <nav class="nav">
+      <a href="/#work">Work</a>
+      <a href="/#about">About</a>
+      <a href="/#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+  <section class="case-hero">
+    <div class="wrap case-hero-grid">
+      <div>
+        <a class="back" href="/#work">&larr; All projects</a>
+        <p class="eyebrow">Case study</p>
+        <h1>Rung</h1>
+        <p class="tagline">One rung at a time.</p>
+        <p class="lede text">A public AI math tutor for grade 6 and 7 ratios that gives hints instead of answers. The AI writes the words. Code does the grading and decides what the student is allowed to see.</p>
+        <dl class="meta">
+          <div><dt>Role</dt><dd>Product, design and build</dd></div>
+          <div><dt>Focus</dt><dd>Grade 6 and 7 ratios</dd></div>
+          <div><dt>Status</dt><dd>Live</dd></div>
+        </dl>
+        <div class="buttons">
+          <a class="btn btn-primary" href="https://rungbyrung.vercel.app" target="_blank" rel="noopener">Try Rung</a>
+          <a class="btn" href="https://github.com/nkiruanizoba/rung" target="_blank" rel="noopener">See the code</a>
+        </div>
+      </div>
+      <div class="phone">
+        <!-- To show the demo: add assets/rung-demo.mp4 (vertical video). No code change needed. -->
+        <video controls playsinline preload="metadata" aria-label="Rung demo video">
+          <source src="../assets/rung-demo.mp4" type="video/mp4"
+                  onerror="this.parentElement.style.display='none';this.parentElement.nextElementSibling.style.display='flex';">
+        </video>
+        <div class="video-placeholder" style="display:none">
+          <div class="play" aria-hidden="true"></div>
+          <p>Demo video coming soon.<br><a href="https://rungbyrung.vercel.app" target="_blank" rel="noopener">Try Rung live</a> in the meantime.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-soft">
+    <div class="wrap"><div class="text">
+      <p class="eyebrow">The problem</p>
+      <h2>Getting the answer is easy now. Learning still isn't.</h2>
+      <p>Any student with a chatbot can get the answer to a ratio problem in seconds. That finishes the homework, but it skips the part where the student works something out and it sticks.</p>
+      <p>A good tutor does the opposite. They figure out where you went wrong, give you just enough to take the next step, and hold back the answer. I wanted to see whether an AI tutor could be built to behave that way reliably, and to prove it with measurements instead of a demo that happens to look good.</p>
+    </div></div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="text">
+        <p class="eyebrow">Who it's for</p>
+        <h2>Middle schoolers working on ratios</h2>
+        <p>Rung is for students in grades 6 and 7 practicing ratios. It's public and there's no account to create, so a student can open it and start right away.</p>
+        <p>Keeping it to one topic was deliberate. Ratios have well-known mistakes that students make again and again, which makes it possible to check the tutor's behavior closely instead of hoping it works across all of math.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-soft">
+    <div class="wrap">
+      <p class="eyebrow">What's already out there</p>
+      <h2>Other AI and computer tutors</h2>
+      <div class="cards">
+        <div class="card">
+          <p class="label">Khanmigo</p>
+          <h3>Socratic AI tutor</h3>
+          <p>Khan Academy's tutor asks guiding questions instead of giving answers. A University of Toronto study of 18 Tennessee middle schools, reported by the Hechinger Report on September 21, 2026, found that students mostly stopped using it.</p>
+        </div>
+        <div class="card">
+          <p class="label">Eedi Tutor</p>
+          <h3>Closest in spirit</h3>
+          <p>Built on data about student misconceptions and never gives the answer. Rung shares this idea: find the specific mistake, then respond to it.</p>
+        </div>
+        <div class="card">
+          <p class="label">Carnegie Learning MATHia</p>
+          <h3>The lineage Rung borrows from</h3>
+          <p>MATHia comes from the Cognitive Tutor line of research, which tracks what a student has mastered skill by skill. Rung's skill map uses the same family of methods.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="text">
+        <p class="eyebrow">The solution</p>
+        <h2>A four-rung hint ladder</h2>
+        <p>When a student gets stuck, Rung offers help in steps. Each rung gives a little more than the one before, so the full method comes last, not first.</p>
+      </div>
+      <div class="steps">
+        <div class="step"><div class="num">1</div><h3>Nudge</h3><p>A light prompt to get the student thinking again.</p></div>
+        <div class="step"><div class="num">2</div><h3>Hint</h3><p>A pointer toward the idea the problem depends on.</p></div>
+        <div class="step"><div class="num">3</div><h3>Example</h3><p>A similar problem worked through, so the student can copy the approach.</p></div>
+        <div class="step"><div class="num">4</div><h3>Walkthrough</h3><p>A full step-by-step path through the method.</p></div>
+      </div>
+      <div class="text" style="margin-top:40px">
+        <p>Behind the ladder, code grades every answer and matches wrong answers to five known ratio misconceptions, so the help speaks to the mistake the student actually made. A skill map tracks mastery for each skill using Bayesian Knowledge Tracing. Before any reply reaches the student, code checks it and blocks it if it gives the answer away.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-soft">
+    <div class="wrap">
+      <div class="text">
+        <p class="eyebrow">Evals</p>
+        <h2>How I measured it</h2>
+        <p>I wrote a 32-case eval that checks the things that matter for a tutor: does it leak the answer, does it make math mistakes, how fast does it respond, and does it sound like a person or a template. I ran the full set twice on September 30, before and after one prompt revision, and scored both runs with the same code.</p>
+      </div>
+      <div class="stats">
+        <div class="stat"><div class="value">0</div><div class="desc">answer leaks across 28 checked replies</div></div>
+        <div class="stat"><div class="value">0</div><div class="desc">math errors</div></div>
+        <div class="stat"><div class="value">~1.2s</div><div class="desc">median response time</div></div>
+        <div class="stat"><div class="value">32</div><div class="desc">test cases per run</div></div>
+      </div>
+      <div class="text">
+        <h3>What one prompt revision changed</h3>
+        <table class="before-after">
+          <thead><tr><th>Measure</th><th>Before</th><th>After</th></tr></thead>
+          <tbody>
+            <tr><td>Replies that opened with a stock phrase</td><td>15 of 32</td><td>0 of 32</td></tr>
+            <tr><td>Walkthroughs that were complete</td><td>3 of 4</td><td>4 of 4</td></tr>
+          </tbody>
+        </table>
+        <div class="callout">
+          <h3>The grader had a bug too</h3>
+          <p>Partway through, I found a mistake in the grading code itself. It was counting the student's own answer as the tutor doing math. I fixed it, then graded the first run again with the fixed code so the before and after comparison is fair.</p>
+          <p>It was a useful reminder that evals are software too, and they need checking like anything else.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="text">
+        <p class="eyebrow">Key decisions</p>
+        <h2>What I chose, and why</h2>
+      </div>
+      <ul class="decisions">
+        <li>
+          <h3>Code grades. The AI only writes the words.</h3>
+          <p>Whether an answer is right is a math question with one answer, so code decides it. The language model's job is to explain and encourage, which is what it's good at.</p>
+        </li>
+        <li>
+          <h3>Hints in steps, not one big answer</h3>
+          <p>A fixed ladder of Nudge, Hint, Example and Walkthrough keeps the help predictable and saves the full method for last, after the student has had a chance to get there on their own.</p>
+        </li>
+        <li>
+          <h3>Name the mistake</h3>
+          <p>Matching wrong answers to five known ratio misconceptions means the next hint is about the student's actual error, not a generic retry message.</p>
+        </li>
+        <li>
+          <h3>Check every reply before it's shown</h3>
+          <p>A tutor that gives away the answer has failed, however friendly it sounds. Code checks each reply and blocks any that reveal the answer.</p>
+        </li>
+        <li>
+          <h3>Track skills, not just scores</h3>
+          <p>A skill map built on Bayesian Knowledge Tracing estimates mastery for each skill, borrowing from the Cognitive Tutor research behind MATHia.</p>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section-soft">
+    <div class="wrap two-col">
+      <div class="text">
+        <p class="eyebrow">Guardrails</p>
+        <h2>Safe to leave running in public</h2>
+        <p>Rung is open to anyone, so it needed protection against misuse and runaway costs, and it needed to respect students' privacy from day one.</p>
+      </div>
+      <ul class="checklist">
+        <li>The API key lives only in Vercel, never in the browser</li>
+        <li>Per-visitor and daily limits enforced in code</li>
+        <li>A Vercel Firewall rule in front of the app</li>
+        <li>A monthly spend limit</li>
+        <li>No accounts, and nothing stored on the server</li>
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap"><div class="text">
+      <p class="eyebrow">What I learned</p>
+      <h2>Three things I'd carry into the next AI product</h2>
+      <ul class="checklist">
+        <li><strong>Decide what has to be right, and give that to code.</strong> Grading and answer checks don't belong to the model. With those in code, the AI can focus on what it does well: explaining.</li>
+        <li><strong>Evals need checking too.</strong> The bug in my own grader would have made the tutor look worse than it was. Re-grading the first run with the fixed code is what made the comparison trustworthy.</li>
+        <li><strong>Small prompt changes are only visible if you measure them.</strong> One revision took stock openers from 15 of 32 replies to 0. I wouldn't have known that from reading a few replies by hand.</li>
+      </ul>
+    </div></div>
+  </section>
+
+  <section class="section-soft">
+    <div class="wrap"><div class="text">
+      <p class="eyebrow">Try it</p>
+      <h2>See it for yourself</h2>
+      <p>Rung is live. Try a few problems, get one wrong on purpose, and watch how it responds.</p>
+      <div class="buttons">
+        <a class="btn btn-primary" href="https://rungbyrung.vercel.app" target="_blank" rel="noopener">Open Rung</a>
+        <a class="btn" href="https://github.com/nkiruanizoba/rung" target="_blank" rel="noopener">Read the code on GitHub</a>
+      </div>
+    </div></div>
+  </section>
+
+</main>
+
+<footer id="contact" class="site-footer">
+  <div class="wrap">
+    <h2>Let's talk.</h2>
+    <div class="footer-links">
+      <a href="mailto:nkiruanizoba@gmail.com">nkiruanizoba@gmail.com</a>
+      <a href="https://www.linkedin.com/in/nkiruanizoba" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="/">Home</a>
+    </div>
+    <p class="fine">&copy; 2026 Nkiru Anizoba</p>
+  </div>
+</footer>
+
+</body>
+</html>

@@ -4,9 +4,9 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Nkiru Anizoba | AI Product Leader</title>
-  <meta name="description" content="Nkiru Anizoba is an AI product leader building intelligent products at the intersection of AI, games and learning. Portfolio and case studies, starting with Rung, an AI math tutor that gives hints instead of answers.">
+  <meta name="description" content="Nkiru Anizoba is an AI product leader building intelligent products at the intersection of AI, games and learning. Selected work from Activision Publishing and independent projects like Rung, an AI math tutor.">
   <meta property="og:title" content="Nkiru Anizoba | AI Product Leader">
-  <meta property="og:description" content="Portfolio and case studies, starting with Rung, an AI math tutor that gives hints instead of answers.">
+  <meta property="og:description" content="Selected AI product work from Activision Publishing and independent projects like Rung, an AI math tutor.">
   <meta property="og:url" content="https://nkiruanizoba.com/">
   <meta property="og:type" content="website">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
@@ -23,7 +23,7 @@
     <nav class="nav">
       <a href="#work">Work</a>
       <a href="#about">About</a>
-      <a class="hide-sm" href="#interests">Interests</a>
+      <a class="hide-sm" href="#focus">Focus</a>
       <a href="#contact">Contact</a>
     </nav>
   </div>
@@ -36,14 +36,14 @@
       <div>
         <p class="eyebrow">AI Product Leader</p>
         <h1>Building intelligent products at the intersection of AI, games and learning.</h1>
-        <p class="lede text">I'm Nkiru, a Senior Technical Product Manager in AI Strategy at Activision Publishing. This is where I keep the work itself: case studies, projects and writing, starting with Rung, an AI math tutor I designed and built.</p>
+        <p class="lede text">I'm Nkiru, a product builder and systems thinker. I love taking a messy problem, understanding the people, workflows and incentives around it, and turning it into a product people actually use, then measuring what works. I'm a Senior Technical Product Manager in Artificial Intelligence at one of the Xbox Game Studios.</p>
         <div class="buttons">
-          <a class="btn btn-primary" href="rung/">Read the Rung case study</a>
+          <a class="btn btn-primary" href="#work">See selected work</a>
+          <a class="btn" href="rung/">Rung case study</a>
           <a class="btn" href="https://www.linkedin.com/in/nkiruanizoba" target="_blank" rel="noopener">LinkedIn</a>
         </div>
       </div>
       <div>
-        <!-- To show your photo: add assets/nkiru.jpg (portrait, about 4:5). No code change needed. -->
         <img class="portrait" src="assets/nkiru.jpg" alt="Nkiru Anizoba"
              onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
         <div class="portrait portrait-placeholder" style="display:none" aria-hidden="true">N</div>
@@ -54,8 +54,32 @@
   <section id="work" class="section-soft">
     <div class="wrap">
       <p class="eyebrow">Selected work</p>
-      <h2>Projects</h2>
-      <p class="text" style="color:var(--ink-soft);margin-bottom:32px">Things I've designed, built and shipped end to end, with the decisions and the numbers behind them.</p>
+      <h2>At Activision Publishing</h2>
+      <p class="text" style="color:var(--ink-soft);margin-bottom:8px">AI work in a large game production environment, described at a high level.</p>
+
+      <div class="cards">
+        <div class="card">
+          <p class="label">AI for game development</p>
+          <h3>AI-assisted world building</h3>
+          <p>Three concurrent AI initiatives for building large game environments: placing props, texturing buildings and catching performance problems in the level editor early, before a long build.</p>
+          <p class="impact"><strong>Target:</strong> roughly 10 to 15% workflow savings across art and level editing.</p>
+        </div>
+        <div class="card">
+          <p class="label">Developer productivity</p>
+          <h3>Build diagnostics and branch stability</h3>
+          <p>An LLM assistant that helps diagnose build failures, as part of broader work on branch stability metrics and interventions.</p>
+          <p class="impact"><strong>Impact:</strong> the broader branch stability work was associated with roughly a 15% reduction in build regressions over a year.</p>
+        </div>
+        <div class="card">
+          <p class="label">Multimodal AI for game QA</p>
+          <h3>Knowing when not to ship</h3>
+          <p>A multimodal LLM workflow that flagged localization and UI issues in in-game screenshots. It worked technically. Measured against the existing workflow and its real costs, the savings didn't justify building and maintaining it, so we stopped.</p>
+          <p class="impact"><strong>Impact:</strong> avoided putting an AI tool into production that the business case didn't support.</p>
+        </div>
+      </div>
+
+      <h2 style="margin-top:64px">Built independently</h2>
+      <p class="text" style="color:var(--ink-soft);margin-bottom:32px">Products I design, build and measure myself, with the decisions and the numbers behind them.</p>
 
       <a class="project-card" href="rung/">
         <div>
@@ -78,7 +102,18 @@
         </div>
       </a>
 
-      <div class="coming-soon">More case studies are on the way.</div>
+      <div class="cards cards-2" style="margin-top:20px">
+        <div class="card">
+          <p class="label">In development &middot; Patent pending</p>
+          <h3>Reasoning-centered learning platform</h3>
+          <p>A learning platform designed to assess reasoning, not accuracy. Rather than scoring answers as right or wrong, it focuses on how a learner is thinking and responds to that. The assessment system behind it is U.S. patent pending.</p>
+        </div>
+        <div class="card">
+          <p class="label">Insights engine</p>
+          <h3>Sift</h3>
+          <p>An AI-powered insights engine that turns unstructured feedback into traceable themes and trends. Sift answers questions in plain English and surfaces the relevant insights, with every finding linked back to the reviews that support it. Built on public Steam reviews, it tracks how player feedback changes across game updates and is validated against hand-labeled evals.</p>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -88,38 +123,38 @@
         <p class="eyebrow">About</p>
         <h2>Strategy background, builder habits</h2>
         <p>I've spent my career between strategy and shipping. My background spans consulting, venture capital and health analytics. Since 2022 I've been at Activision Publishing, first as a Technical Product Manager and since 2024 in AI Strategy.</p>
-        <p>The part I enjoy most is turning a fuzzy idea into a working product: deciding what the AI should do, what plain code should do instead, and how to prove the result with real measurements.</p>
+        <p>The part I enjoy most is turning a fuzzy idea into a working product: deciding what the AI should do, what plain code should do instead, and how to prove the result with real measurements. Sometimes the honest answer is that the AI shouldn't ship at all.</p>
       </div>
       <ul class="facts">
-        <li><strong>Activision Publishing</strong><small>Senior Technical Product Manager, AI Strategy (2024 to now). Technical Product Manager (2022 to 2024)</small></li>
+        <li><strong>Activision Publishing</strong><small>Senior Technical Product Manager, Artificial Intelligence (2024 to now). Technical Product Manager (2022 to 2024)</small></li>
         <li><strong>MIT Sloan School of Management</strong><small>MBA, 2022</small></li>
         <li><strong>Crossix Solutions</strong><small>Health data and analytics</small></li>
         <li><strong>Ingressive Capital</strong><small>Venture capital</small></li>
-        <li><strong>McKinsey &amp; Company, Lagos</strong><small>Consulting</small></li>
+        <li><strong>McKinsey &amp; Company</strong><small>Consulting</small></li>
         <li><strong>Bryn Mawr College</strong><small>BA, Economics, 2014</small></li>
       </ul>
     </div>
   </section>
 
-  <section id="interests" class="section-soft">
+  <section id="focus" class="section-soft">
     <div class="wrap">
-      <p class="eyebrow">What I care about</p>
-      <h2>Where I want to spend my time</h2>
+      <p class="eyebrow">Areas of focus</p>
+      <h2>What I work on</h2>
       <div class="cards">
         <div class="card">
           <p class="label">01</p>
-          <h3>AI products that hold up</h3>
-          <p>Product and technical program work on AI systems, with evals, guardrails and clear lines between what the model decides and what code decides.</p>
+          <h3>Systems first</h3>
+          <p>Before deciding what to build, or whether AI belongs in it, I map how the people, workflows, incentives and technology fit together. The right product is often not the first one proposed.</p>
         </div>
         <div class="card">
           <p class="label">02</p>
-          <h3>Education technology</h3>
-          <p>Learning tools that help people actually get better at something, not just finish the assignment.</p>
+          <h3>Products that hold up</h3>
+          <p>Deciding what AI should do, what plain code should do, and what not to build at all, then backing those calls with real measurements and an honest business case.</p>
         </div>
         <div class="card">
           <p class="label">03</p>
-          <h3>Generative AI in games</h3>
-          <p>How generative AI changes the way games are made and played. I also write about gamified learning in my newsletter, Loot &amp; Learn.</p>
+          <h3>Games and learning</h3>
+          <p>How games get made and played, and how AI is changing both, plus products that help people actually get better at something. I also write about gamified learning in my newsletter, Loot &amp; Learn.</p>
         </div>
       </div>
     </div>

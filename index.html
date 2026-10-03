@@ -4,9 +4,9 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Nkiru Anizoba | AI Product Leader</title>
-  <meta name="description" content="Nkiru Anizoba is an AI product leader building intelligent products at the intersection of AI, games and learning. Selected work from Activision Publishing and independent projects like Rung, an AI math tutor.">
+  <meta name="description" content="Nkiru Anizoba is a senior technical product leader working across AI, games and developer tools, who also builds AI products independently, including Sift and Rung.">
   <meta property="og:title" content="Nkiru Anizoba | AI Product Leader">
-  <meta property="og:description" content="Selected AI product work from Activision Publishing and independent projects like Rung, an AI math tutor.">
+  <meta property="og:description" content="Senior technical product leader working across AI, games and developer tools. Selected work and independent projects, including Sift and Rung.">
   <meta property="og:url" content="https://nkiruanizoba.com/">
   <meta property="og:type" content="website">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
@@ -22,8 +22,8 @@
     <a class="logo" href="/">Nkiru Anizoba</a>
     <nav class="nav">
       <a href="#work">Work</a>
+      <a class="hide-sm" href="#independent">Projects</a>
       <a href="#about">About</a>
-      <a class="hide-sm" href="#focus">Focus</a>
       <a href="#contact">Contact</a>
     </nav>
   </div>
@@ -35,8 +35,9 @@
     <div class="wrap hero-grid">
       <div>
         <p class="eyebrow">AI Product Leader</p>
-        <h1>Building intelligent products at the intersection of AI, games and learning.</h1>
-        <p class="lede text">I'm Nkiru, a product builder and systems thinker. I love taking a messy problem, understanding the people, workflows and incentives around it, and turning it into a product people actually use, then measuring what works. I'm a Senior Technical Product Manager in Artificial Intelligence at one of the world's largest AAA game publishers.</p>
+        <h1>I build AI products for complex, real-world systems.</h1>
+        <p class="lede text">I'm Nkiru, a senior technical product leader working across AI, games and developer tools. My work spans generative AI, developer productivity, personalization and the systems that help teams make better product decisions.</p>
+        <p class="lede text">I also build AI products independently, mostly to explore questions I'm curious about and stay close to the technology.</p>
         <div class="buttons">
           <a class="btn btn-primary" href="#work">See selected work</a>
           <a class="btn" href="rung/">Rung case study</a>
@@ -54,64 +55,102 @@
   <section id="work" class="section-soft">
     <div class="wrap">
       <p class="eyebrow">Selected work</p>
-      <h2>At Activision Publishing</h2>
-      <p class="text" style="color:var(--ink-soft);margin-bottom:8px">AI work in a large game production environment, described at a high level.</p>
+      <h2>In my current role</h2>
+      <p class="text section-intro">I work on AI products and technical systems for large-scale game development. Much of my work starts with the same question: where can AI meaningfully improve a workflow, and what has to be true for it to work in production?</p>
 
-      <div class="cards">
-        <div class="card">
-          <p class="label">AI for game development</p>
+      <div class="cards cards-2">
+        <article class="card work-card">
+          <h3>Generative AI for visual effects</h3>
+          <p class="subtitle">Turning natural-language descriptions into production-ready VFX.</p>
+          <p>I helped shape a generative AI workflow that lets artists describe an effect in plain language and turn that intent into a starting point for production.</p>
+          <p>The harder product problem wasn't simply generating something visually plausible. It was understanding where generation could fit into an existing creative workflow without taking control away from artists.</p>
+          <p>My work focused on the product strategy, workflow design and evaluation needed to move the idea toward production, working across engineering, research and creative teams.</p>
+          <ul class="tags"><li>Generative AI</li><li>Creative tooling</li><li>Workflow design</li><li>Evaluation</li></ul>
+        </article>
+        <article class="card work-card">
           <h3>AI-assisted world building</h3>
-          <p>Three concurrent AI initiatives for building large game environments: placing props, texturing buildings and catching performance problems in the level editor early, before a long build.</p>
-          <p class="impact"><strong>Target:</strong> roughly 10 to 15% workflow savings across art and level editing.</p>
-        </div>
-        <div class="card">
-          <p class="label">Developer productivity</p>
-          <h3>Build diagnostics and branch stability</h3>
-          <p>An LLM assistant that helps diagnose build failures, as part of broader work on branch stability metrics and interventions.</p>
-          <p class="impact"><strong>Impact:</strong> the broader branch stability work was associated with roughly a 15% reduction in build regressions over a year.</p>
-        </div>
-        <div class="card">
-          <p class="label">Multimodal AI for game QA</p>
-          <h3>Knowing when not to ship</h3>
-          <p>A multimodal LLM workflow that flagged localization and UI issues in in-game screenshots. It worked technically. Measured against the existing workflow and its real costs, the savings didn't justify building and maintaining it, so we stopped.</p>
-          <p class="impact"><strong>Impact:</strong> avoided putting an AI tool into production that the business case didn't support.</p>
-        </div>
+          <p class="subtitle">Exploring where AI can remove repetitive work from large-scale environment creation.</p>
+          <p>I've led a portfolio of AI-assisted world-building initiatives focused on some of the repetitive work involved in creating and editing large game environments.</p>
+          <p>The goal is not to automate creative judgment. It is to identify parts of the workflow where AI can reduce friction while preserving the control artists and designers need.</p>
+          <p>That has meant translating emerging AI capabilities into concrete workflows, defining how we evaluate usefulness and quality, and working across research, engineering and production teams to determine what is actually worth building.</p>
+          <ul class="tags"><li>Applied AI</li><li>Game development</li><li>Product strategy</li><li>Human-in-the-loop systems</li></ul>
+        </article>
+        <article class="card work-card">
+          <h3>Developer productivity</h3>
+          <p class="subtitle">Using AI and production data to make game development more reliable.</p>
+          <p>One part of my work has focused on the systems behind game development itself.</p>
+          <p>I led work on an LLM-based diagnostic tool that helps developers understand build failures and get to likely fixes faster. In parallel, I developed a branch-stability measurement system that made recurring sources of instability visible and helped teams intervene earlier.</p>
+          <p>That work contributed to a 15% reduction in build regressions over a year.</p>
+          <p>What interested me most was not simply adding AI to developer tooling. It was understanding where developers were losing time, what information they needed at the moment something went wrong, and how better feedback loops could change the underlying system.</p>
+          <ul class="tags"><li>Developer tools</li><li>LLMs</li><li>Reliability</li><li>Product analytics</li></ul>
+        </article>
+        <article class="card work-card">
+          <h3>Knowing when not to ship AI</h3>
+          <p class="subtitle">A multimodal QA product that made sense technically, but not economically.</p>
+          <p>I explored a multimodal AI system designed to detect localization and UI issues from in-game screenshots.</p>
+          <p>Technically, the approach worked. But when I modeled the cost of running it at the scale the workflow required, the economics didn't justify continuing.</p>
+          <p>So we didn't.</p>
+          <p>It reinforced something I think is increasingly important in AI product development: proving that a model can perform a task is only one part of the product decision. Quality, latency, operating cost, workflow fit and the value of the problem all matter.</p>
+          <ul class="tags"><li>Multimodal AI</li><li>Product economics</li><li>Build vs. buy</li><li>Product judgment</li></ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="earlier">
+    <div class="wrap">
+      <h2>Earlier product work</h2>
+      <div class="text section-intro">
+        <p>Before focusing primarily on AI strategy, I worked on player-facing products and systems across major game releases.</p>
+        <p>That included progression and personalization systems, recommendation algorithms and live game experiences designed around how players actually behave.</p>
+      </div>
+      <div class="cards cards-2">
+        <article class="card work-card">
+          <h3>Progression &amp; personalization</h3>
+          <p>I worked on progression and personalized reward experiences for a major game franchise, using player behavior and experimentation to improve how content was surfaced and experienced.</p>
+          <p class="impact">Changes to the experience contributed to a 15% increase in conversion.</p>
+        </article>
+        <article class="card work-card">
+          <h3>Recommendations</h3>
+          <p>I also worked on recommendation systems for the in-game store, using behavioral signals to make merchandising more relevant to individual players.</p>
+          <p class="impact">The resulting changes increased conversion by 5%.</p>
+        </article>
+      </div>
+      <p class="text section-outro">That work shaped how I approach AI products today. Models and algorithms matter, but the product problem comes first: what decision are we helping someone make, what behavior are we trying to change, and how will we know if the system actually made things better?</p>
+    </div>
+  </section>
+
+  <section id="independent" class="section-soft">
+    <div class="wrap">
+      <h2>Built independently</h2>
+      <p class="text section-intro">I build outside of work to stay close to the technology and test ideas end to end, from the initial product question through prototypes, evaluation and iteration.</p>
+      <div class="cards cards-2">
+        <article class="card work-card">
+          <h3>Sift</h3>
+          <p class="subtitle">An insights engine for messy text.</p>
+          <p>Sift answers questions in plain English and surfaces the relevant insights, with every finding linked back to the reviews that support it.</p>
+          <p>I built it on more than 26,000 public Steam reviews spanning major game updates. It clusters feedback into themes, compares how sentiment and issues change across updates, and links generated insights back to the underlying reviews.</p>
+          <p>I also built hand-labeled evaluations to test whether its citations and conclusions were actually grounded in the source material.</p>
+          <p>Sift started with a question I kept coming back to: how do you use an LLM to synthesize thousands of opinions without asking the user to simply trust what it says?</p>
+          <ul class="tags"><li>LLMs</li><li>Retrieval</li><li>Grounding</li><li>Evaluation</li><li>Product analytics</li></ul>
+        </article>
+        <a class="card work-card card-link" href="rung/">
+          <h3>Rung</h3>
+          <p class="subtitle">An AI math tutor designed to guide students to think, not just output answers.</p>
+          <p>Rung explores a problem I find particularly interesting in AI and learning: a model that can answer almost anything can easily do too much of the work for the learner.</p>
+          <p>I designed Rung around hints rather than answers. The system identifies likely misconceptions, tracks what a learner appears to understand and adapts the next intervention accordingly.</p>
+          <p>Building it has meant thinking about more than the conversational layer: deterministic grading, misconception detection, knowledge tracing, evaluation, latency, guardrails and the boundary between being helpful and taking over the reasoning process.</p>
+          <ul class="tags"><li>AI tutoring</li><li>Adaptive learning</li><li>Evaluation</li><li>Learning systems</li></ul>
+          <span class="more-link">Read the case study &rarr;</span>
+        </a>
       </div>
 
-      <h2 style="margin-top:64px">Built independently</h2>
-      <p class="text" style="color:var(--ink-soft);margin-bottom:32px">Products I design, build and measure myself, with the decisions and the numbers behind them.</p>
-
-      <a class="project-card" href="rung/">
-        <div>
-          <h3>Rung</h3>
-          <p class="tagline">One rung at a time.</p>
-          <p>A public AI math tutor for grade 6 and 7 ratios that gives hints instead of answers. Code grades every answer and blocks any reply that gives the answer away. The AI only writes the words.</p>
-          <ul class="tags">
-            <li>AI tutoring</li>
-            <li>Education technology</li>
-            <li>Evals</li>
-            <li>Guardrails</li>
-          </ul>
-          <span class="more-link">Read the case study &rarr;</span>
-        </div>
-        <div class="ladder" aria-hidden="true">
-          <div><span>4</span>Walkthrough</div>
-          <div><span>3</span>Example</div>
-          <div><span>2</span>Hint</div>
-          <div><span>1</span>Nudge</div>
-        </div>
-      </a>
-
-      <div class="cards cards-2" style="margin-top:20px">
+      <h3 class="subsection">Learning work</h3>
+      <div class="cards cards-2">
         <div class="card">
           <p class="label">In development &middot; Patent pending</p>
           <h3>Reasoning-centered learning platform</h3>
           <p>A learning platform designed to assess reasoning, not accuracy. Rather than scoring answers as right or wrong, it focuses on how a learner is thinking and responds to that. The assessment system behind it is U.S. patent pending.</p>
-        </div>
-        <div class="card">
-          <p class="label">Insights engine</p>
-          <h3>Sift</h3>
-          <p>An AI-powered insights engine that turns unstructured feedback into traceable themes and trends. Sift answers questions in plain English and surfaces the relevant insights, with every finding linked back to the reviews that support it. Built on public Steam reviews, it tracks how player feedback changes across game updates and is validated against hand-labeled evals.</p>
         </div>
       </div>
     </div>
@@ -121,42 +160,26 @@
     <div class="wrap two-col">
       <div class="text">
         <p class="eyebrow">About</p>
-        <h2>Strategy background, builder habits</h2>
-        <p>I've spent my career between strategy and shipping. My background spans consulting, venture capital and health analytics. Since 2022 I've been at Activision Publishing, first as a Technical Product Manager and since 2024 in AI Strategy.</p>
-        <p>The part I enjoy most is turning a fuzzy idea into a working product: deciding what the AI should do, what plain code should do instead, and how to prove the result with real measurements. Sometimes the honest answer is that the AI shouldn't ship at all.</p>
+        <h2>Strategy background. Builder habits.</h2>
+        <p>I've spent most of my career working on messy problems where the answer isn't obvious.</p>
+        <p>I started in analytics, where I learned to turn data into decisions, and later moved into strategy consulting, where I worked on questions that rarely arrived neatly defined. Over time, I became less interested in stopping at the recommendation and more interested in what came next: deciding what to build, making the tradeoffs and seeing whether it actually worked.</p>
+        <p>That pulled me toward product.</p>
+        <p>I went on to earn my Master of Business Administration from the Massachusetts Institute of Technology, then moved into games, where I've worked across player-facing products, developer systems and AI.</p>
+        <p>AI has made that work especially interesting to me because the technology changes quickly while the fundamentals of good product judgment do not. A model can be impressive and still be the wrong product. A prototype can work and still fail in a real workflow. And sometimes the most important decision is deciding not to build something at all.</p>
+        <p>Outside of my day job, I build products myself. It keeps me close to the details: prompts, evals, failure cases, data, latency, cost and all the small decisions that disappear when a product is reduced to a roadmap slide.</p>
+        <p>Increasingly, I'm also interested in learning: how intelligent systems can help people reason, practice and develop understanding without simply doing the thinking for them.</p>
+        <p>Across all of it, the question I keep coming back to is pretty simple:</p>
+        <p class="pull">What would have to be true for this to actually work?</p>
+        <p>That's usually where I like to start.</p>
       </div>
       <ul class="facts">
-        <li><strong>Activision Publishing, Inc. (a Microsoft company)</strong><small>Senior Technical Product Manager, Artificial Intelligence (2024 to now). Technical Product Manager (2022 to 2024)</small></li>
-        <li><strong>Massachusetts Institute of Technology</strong><small>MBA, 2022</small></li>
+        <li><strong>AAA game publisher</strong><small>Senior Technical Product Manager, Artificial Intelligence (2024 to now). Technical Product Manager (2022 to 2024)</small></li>
+        <li><strong>Massachusetts Institute of Technology</strong><small>Master of Business Administration, 2022</small></li>
         <li><strong>McKinsey &amp; Company</strong><small>Consulting</small></li>
         <li><strong>Ingressive Capital</strong><small>Venture capital</small></li>
         <li><strong>Crossix Solutions, Inc. (now Veeva Crossix)</strong><small>Health data and analytics</small></li>
         <li><strong>Bryn Mawr College</strong><small>BA, Economics, 2014</small></li>
       </ul>
-    </div>
-  </section>
-
-  <section id="focus" class="section-soft">
-    <div class="wrap">
-      <p class="eyebrow">Areas of focus</p>
-      <h2>What I work on</h2>
-      <div class="cards">
-        <div class="card">
-          <p class="label">01</p>
-          <h3>Systems first</h3>
-          <p>Before deciding what to build, or whether AI belongs in it, I map how the people, workflows, incentives and technology fit together. The right product is often not the first one proposed.</p>
-        </div>
-        <div class="card">
-          <p class="label">02</p>
-          <h3>Products that hold up</h3>
-          <p>Deciding what AI should do, what plain code should do, and what not to build at all, then backing those calls with real measurements and an honest business case.</p>
-        </div>
-        <div class="card">
-          <p class="label">03</p>
-          <h3>Games and learning</h3>
-          <p>How games get made and played, and how AI is changing both, plus products that help people actually get better at something. I also write about gamified learning in my newsletter, Loot &amp; Learn.</p>
-        </div>
-      </div>
     </div>
   </section>
 

@@ -657,3 +657,33 @@ section + section { border-top: 1px solid var(--line); }
 /* Two-column card row */
 .cards-2 { grid-template-columns: repeat(2, 1fr); }
 @media (max-width: 860px) { .cards-2 { grid-template-columns: 1fr; } }
+
+/* Oct 3 layout additions */
+.section-intro { color: var(--ink-soft); margin-bottom: 32px; }
+.section-intro p { margin-bottom: 0.8em; }
+.section-outro { margin-top: 32px; color: var(--ink-soft); }
+.work-card h3 { font-size: 1.35rem; margin-bottom: 0.25em; }
+.work-card .subtitle {
+  font-family: var(--serif);
+  font-style: italic;
+  color: var(--accent);
+  margin-bottom: 0.9em;
+}
+.work-card p { margin-bottom: 0.8em; }
+.work-card .tags { margin-top: 16px; }
+.card-link {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+.card-link:hover { transform: translateY(-2px); box-shadow: 0 10px 30px rgba(60, 40, 20, 0.08); }
+.subsection { margin: 56px 0 20px; font-size: 1.5rem; }
+.pull {
+  font-family: var(--serif);
+  font-size: 1.4rem;
+  line-height: 1.35;
+  color: var(--accent);
+  margin: 0.4em 0 0.6em;
+}
+.hero .lede + .lede { margin-top: -0.2em; }

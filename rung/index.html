@@ -49,15 +49,31 @@
         </div>
       </div>
       <div class="phone">
-        <!-- To show the demo: add assets/rung-demo.mp4 (vertical video). No code change needed. -->
-        <video controls playsinline preload="metadata" aria-label="Rung demo video">
-          <source src="../assets/rung-demo.mp4" type="video/mp4"
-                  onerror="this.parentElement.style.display='none';this.parentElement.nextElementSibling.style.display='flex';">
+        <video id="rung-demo" autoplay muted loop playsinline preload="metadata" title="Click to pause or play"
+               poster="../assets/rung-demo-poster-light.jpg" aria-label="Rung demo video">
+          <source src="../assets/rung-demo-light.mp4" type="video/mp4">
         </video>
-        <div class="video-placeholder" style="display:none">
-          <div class="play" aria-hidden="true"></div>
-          <p>Demo video coming soon.<br><a href="https://rungbyrung.vercel.app" target="_blank" rel="noopener">Try Rung live</a> in the meantime.</p>
-        </div>
+        <script>
+          (function () {
+            var v = document.getElementById('rung-demo');
+            var mq = window.matchMedia('(prefers-color-scheme: dark)');
+            function pick() {
+              var mode = mq.matches ? 'dark' : 'light';
+              var src = '../assets/rung-demo-' + mode + '.mp4';
+              if (v.currentSrc && v.currentSrc.indexOf(src.slice(2)) !== -1) return;
+              v.poster = '../assets/rung-demo-poster-' + mode + '.jpg';
+              v.src = src;
+              v.load();
+              var p = v.play();
+              if (p && p.catch) p.catch(function () {});
+            }
+            pick();
+            v.style.cursor = 'pointer';
+            v.addEventListener('click', function () { if (v.paused) v.play(); else v.pause(); });
+            if (mq.addEventListener) mq.addEventListener('change', pick);
+            else if (mq.addListener) mq.addListener(pick);
+          })();
+        </script>
       </div>
     </div>
   </section>

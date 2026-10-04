@@ -687,3 +687,12 @@ section + section { border-top: 1px solid var(--line); }
   margin: 0.4em 0 0.6em;
 }
 .hero .lede + .lede { margin-top: -0.2em; }
+
+/* "My role" line on work cards */
+.work-card .role {
+  margin-top: 4px;
+  padding-top: 12px;
+  border-top: 1px solid var(--line);
+  color: var(--ink);
+  font-size: 0.95rem;
+}

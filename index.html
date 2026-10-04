@@ -40,6 +40,7 @@
         <p class="lede text">I also build AI products independently, mostly to explore questions I'm curious about and stay close to the technology.</p>
         <div class="buttons">
           <a class="btn btn-primary" href="#work">See selected work</a>
+          <a class="btn" href="sift/">Sift case study</a>
           <a class="btn" href="rung/">Rung case study</a>
           <a class="btn" href="https://www.linkedin.com/in/nkiruanizoba" target="_blank" rel="noopener">LinkedIn</a>
         </div>
@@ -56,7 +57,7 @@
     <div class="wrap">
       <p class="eyebrow">Selected work</p>
       <h2>In my current role</h2>
-      <p class="text section-intro">I work on AI products and technical systems for large-scale game development. Much of my work starts with the same question: where can AI meaningfully improve a workflow, and what has to be true for it to work in production?</p>
+      <p class="text section-intro">I work on AI products and technical systems for large-scale game development. Much of my work starts with the same question: where can AI meaningfully improve a workflow, and what has to be true for it to work in production? Today that means leading five concurrent AI and automation initiatives across four game studios, working with engineering, research, art and studio teams on roadmaps and success metrics.</p>
 
       <div class="cards cards-2">
         <article class="card work-card">
@@ -65,6 +66,7 @@
           <p>I helped shape a generative AI workflow that lets artists describe an effect in plain language and turn that intent into a starting point for production.</p>
           <p>The harder product problem wasn't simply generating something visually plausible. It was understanding where generation could fit into an existing creative workflow without taking control away from artists.</p>
           <p>My work focused on the product strategy, workflow design and evaluation needed to move the idea toward production, working across engineering, research and creative teams.</p>
+          <p class="role"><strong>My role:</strong> I own the vision, roadmap, prioritization and production readiness, including pilots with artists and the quality and cost gates before rollout.</p>
           <ul class="tags"><li>Generative AI</li><li>Creative tooling</li><li>Workflow design</li><li>Evaluation</li></ul>
         </article>
         <article class="card work-card">
@@ -73,6 +75,7 @@
           <p>I've led a portfolio of AI-assisted world-building initiatives focused on some of the repetitive work involved in creating and editing large game environments.</p>
           <p>The goal is not to automate creative judgment. It is to identify parts of the workflow where AI can reduce friction while preserving the control artists and designers need.</p>
           <p>That has meant translating emerging AI capabilities into concrete workflows, defining how we evaluate usefulness and quality, and working across research, engineering and production teams to determine what is actually worth building.</p>
+          <p class="role"><strong>My role:</strong> I lead three concurrent initiatives with research and production teams, targeting 10 to 15% workflow savings.</p>
           <ul class="tags"><li>Applied AI</li><li>Game development</li><li>Product strategy</li><li>Human-in-the-loop systems</li></ul>
         </article>
         <article class="card work-card">
@@ -80,8 +83,9 @@
           <p class="subtitle">Using AI and production data to make game development more reliable.</p>
           <p>One part of my work has focused on the systems behind game development itself.</p>
           <p>I led work on an LLM-based diagnostic tool that helps developers understand build failures and get to likely fixes faster. In parallel, I developed a branch-stability measurement system that made recurring sources of instability visible and helped teams intervene earlier.</p>
-          <p>That work contributed to a 15% reduction in build regressions over a year.</p>
+          <p>That work contributed to a 15% reduction in build failure rate over a year.</p>
           <p>What interested me most was not simply adding AI to developer tooling. It was understanding where developers were losing time, what information they needed at the moment something went wrong, and how better feedback loops could change the underlying system.</p>
+          <p class="role"><strong>My role:</strong> I led the diagnostics tool and delivered the branch stability and analytics platform, including its KPIs and reporting.</p>
           <ul class="tags"><li>Developer tools</li><li>LLMs</li><li>Reliability</li><li>Product analytics</li></ul>
         </article>
         <article class="card work-card">
@@ -91,6 +95,7 @@
           <p>Technically, the approach worked. But when I modeled the cost of running it at the scale the workflow required, the economics didn't justify continuing.</p>
           <p>So we didn't.</p>
           <p>It reinforced something I think is increasingly important in AI product development: proving that a model can perform a task is only one part of the product decision. Quality, latency, operating cost, workflow fit and the value of the problem all matter.</p>
+          <p class="role"><strong>My role:</strong> I ran the evaluation and cost modeling behind the decision to stop.</p>
           <ul class="tags"><li>Multimodal AI</li><li>Product economics</li><li>Build vs. buy</li><li>Product judgment</li></ul>
         </article>
       </div>
@@ -108,12 +113,12 @@
         <article class="card work-card">
           <h3>Progression &amp; personalization</h3>
           <p>I worked on progression and personalized reward experiences for a major game franchise, using player behavior and experimentation to improve how content was surfaced and experienced.</p>
-          <p class="impact">Changes to the experience contributed to a 15% increase in conversion.</p>
+          <p class="impact">The redesign delivered a double-digit increase in conversion over the previous release.</p>
         </article>
         <article class="card work-card">
           <h3>Recommendations</h3>
           <p>I also worked on recommendation systems for the in-game store, using behavioral signals to make merchandising more relevant to individual players.</p>
-          <p class="impact">The resulting changes increased conversion by 5%.</p>
+          <p class="impact">Players saw offers that matched how they actually played, and conversion went up as a result.</p>
         </article>
       </div>
       <p class="text section-outro">That work shaped how I approach AI products today. Models and algorithms matter, but the product problem comes first: what decision are we helping someone make, what behavior are we trying to change, and how will we know if the system actually made things better?</p>
@@ -125,7 +130,7 @@
       <h2>Built independently</h2>
       <p class="text section-intro">I build outside of work to stay close to the technology and test ideas end to end, from the initial product question through prototypes, evaluation and iteration.</p>
       <div class="cards cards-2">
-        <article class="card work-card">
+        <a class="card work-card card-link" href="sift/">
           <h3>Sift</h3>
           <p class="subtitle">An insights engine for messy text.</p>
           <p>Sift answers questions in plain English and surfaces the relevant insights, with every finding linked back to the reviews that support it.</p>
@@ -133,7 +138,8 @@
           <p>I also built hand-labeled evaluations to test whether its citations and conclusions were actually grounded in the source material.</p>
           <p>Sift started with a question I kept coming back to: how do you use an LLM to synthesize thousands of opinions without asking the user to simply trust what it says?</p>
           <ul class="tags"><li>LLMs</li><li>Retrieval</li><li>Grounding</li><li>Evaluation</li><li>Product analytics</li></ul>
-        </article>
+          <span class="more-link">Read the case study &rarr;</span>
+        </a>
         <a class="card work-card card-link" href="rung/">
           <h3>Rung</h3>
           <p class="subtitle">An AI math tutor designed to guide students to think, not just output answers.</p>

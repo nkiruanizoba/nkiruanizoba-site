@@ -1,0 +1,279 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sift: answers about player feedback you can check | Nkiru Anizoba</title>
+  <meta name="description" content="Case study: Sift is an AI agent that answers questions about 26k Steam player reviews, cites every claim, and is graded on whether those citations hold up.">
+  <meta property="og:title" content="Sift: answers about player feedback you can check">
+  <meta property="og:description" content="Case study by Nkiru Anizoba. An agent with four tools, machine-checked citations, and a hand-graded 30-question eval: 96.3% of claims supported by their cited evidence.">
+  <meta property="og:url" content="https://nkiruanizoba.com/sift/">
+  <meta property="og:type" content="article">
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..700;1,9..144,400..700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="logo" href="/">Nkiru Anizoba</a>
+    <nav class="nav">
+      <a href="/#work">Work</a>
+      <a href="/#about">About</a>
+      <a href="/#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+  <section class="case-hero">
+    <div class="wrap case-hero-grid">
+      <div>
+        <a class="back" href="/#independent">&larr; All projects</a>
+        <p class="eyebrow">Case study</p>
+        <h1>Sift</h1>
+        <p class="tagline">Answers you can check.</p>
+        <p class="lede text">An AI agent that answers questions about player feedback in plain language, cites every claim, and is graded on whether those citations actually hold up.</p>
+        <dl class="meta">
+          <div><dt>Role</dt><dd>Product, design and build</dd></div>
+          <div><dt>Data</dt><dd>26k public Steam reviews</dd></div>
+          <div><dt>Status</dt><dd>Live</dd></div>
+        </dl>
+        <div class="buttons">
+          <a class="btn btn-primary" href="https://sift-insights.streamlit.app/" target="_blank" rel="noopener">Try Sift</a>
+          <a class="btn" href="https://github.com/nkiruanizoba/sift" target="_blank" rel="noopener">See the code</a>
+        </div>
+      </div>
+      <div class="card">
+        <p class="label">Example answer, from the eval</p>
+        <p style="margin-bottom:10px"><strong>Why did Helldivers 2 players become less positive after Escalation of Freedom?</strong></p>
+        <p style="margin-bottom:10px">Positive reviews fell from 85.5% before the update to 66.2% after. The reviews point mainly to weapon nerfs and distrust of the developers' balance direction <code>[stats]</code>.</p>
+        <p style="margin-bottom:16px">Players say nerfs are pointless in a PvE game <code>[steam:553850:172139104]</code>.</p>
+        <p class="label" style="margin:0">Every ID points to a real review in the dataset</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-soft">
+    <div class="wrap">
+      <p class="eyebrow">At a glance</p>
+      <div class="glance">
+        <div><h3>Problem</h3><p>Feedback tools show that sentiment dropped, not why. Chatbots say why, but nothing proves they're right.</p></div>
+        <div><h3>Product decision</h3><p>Every claim must cite its evidence, and code checks every citation before anyone trusts it.</p></div>
+        <div><h3>Built</h3><p>An agent with four tools over 26k Steam reviews of three games across nine major updates.</p></div>
+        <div><h3>Results</h3><p>96.3% of claims supported by their cited evidence, 5 of 5 unanswerable questions declined, in a hand-graded 30-question eval.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap"><div class="text">
+      <p class="eyebrow">The problem</p>
+      <h2>Thousands of reviews after every update, and no time to read them</h2>
+      <p>After a major update, a live game team gets thousands of player reviews in a few weeks. Most feedback tools tag and count them, so the team can see that sentiment dropped but not why. Someone still has to read hundreds of reviews to find out.</p>
+      <p>Asking a chatbot is faster, but nothing tells you whether it made the answer up. A confident wrong answer about why players are leaving is worse than no answer, because a team might act on it. I wanted to see whether an agent could synthesize thousands of opinions in a way people could verify, sentence by sentence.</p>
+    </div></div>
+  </section>
+
+  <section class="section-soft">
+    <div class="wrap">
+      <div class="text">
+        <p class="eyebrow">Who it's for</p>
+        <h2>The people who need the answer the week after a patch</h2>
+      </div>
+      <div class="cards">
+        <div class="card">
+          <p class="label">Live ops PM</p>
+          <h3>"Why did reviews turn negative?"</h3>
+          <p>Needs the main reasons fast, and whether it's the same complaint as last time, to decide what to fix first.</p>
+        </div>
+        <div class="card">
+          <p class="label">Community manager</p>
+          <h3>"What are players saying, in their words?"</h3>
+          <p>Needs real quotes, not summaries, before responding publicly to an unpopular change.</p>
+        </div>
+        <div class="card">
+          <p class="label">Engineering lead (next dataset)</p>
+          <h3>"Which build failures are real?"</h3>
+          <p>Needs to separate real regressions from flaky tests. Same platform, pointed at public CI data.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="text">
+        <p class="eyebrow">How it works</p>
+        <h2>One platform, built to add sources</h2>
+        <p>Every source maps to one record schema (ID, source, time, text, metadata, link), so adding a dataset only takes a new ingest adapter. That's the consolidation story: one platform with source adapters, not one tool per dataset.</p>
+      </div>
+      <div class="steps">
+        <div class="step"><div class="num">1</div><h3>Collect</h3><p>26k public English Steam reviews of Helldivers 2, Cyberpunk 2077 and No Man's Sky, sampled day by day before and after nine major updates.</p></div>
+        <div class="step"><div class="num">2</div><h3>Find themes</h3><p>Reviews are grouped into themes per game, and Claude writes a plain label for each from its typical reviews.</p></div>
+        <div class="step"><div class="num">3</div><h3>Ask the agent</h3><p>Claude chooses among four tools: search reviews, compare one update, theme trends, and fetch one review.</p></div>
+        <div class="step"><div class="num">4</div><h3>Check citations</h3><p>Every cited review must exist and must have come from a tool during that question. Anything else is flagged.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-soft">
+    <div class="wrap">
+      <div class="text">
+        <p class="eyebrow">Evals</p>
+        <h2>How I measured it</h2>
+        <p>I wrote 30 questions: 10 "why", 8 before and after comparisons, 7 trend or count questions, and 5 the data can't answer, such as a game that isn't in the dataset or sales figures. A grading script split Sift's answers into 281 statements and put each one next to the full text of the reviews it cited, or the recomputed numbers behind it. I graded every statement by hand.</p>
+      </div>
+      <div class="stats">
+        <div class="stat"><div class="value">96.3%</div><div class="desc">of claims fully supported by their cited evidence (261 of 271)</div></div>
+        <div class="stat"><div class="value">5 of 5</div><div class="desc">unanswerable questions correctly declined</div></div>
+        <div class="stat"><div class="value">134 of 134</div><div class="desc">cited reviews verified automatically</div></div>
+        <div class="stat"><div class="value">30</div><div class="desc">questions, graded statement by statement</div></div>
+      </div>
+      <div class="text">
+        <h3>Round 1 results by question type</h3>
+        <table class="before-after">
+          <thead><tr><th>Question type</th><th>Claims graded</th><th>Fully supported</th></tr></thead>
+          <tbody>
+            <tr><td>Why</td><td>114</td><td>94.7%</td></tr>
+            <tr><td>Before and after comparison</td><td>80</td><td>97.5%</td></tr>
+            <tr><td>Trend or count</td><td>50</td><td>96.0%</td></tr>
+            <tr><td>Can't be answered from the data</td><td>27</td><td>100%</td></tr>
+          </tbody>
+        </table>
+        <p>"Why" answers were the weakest, which fits: that's where an agent is most tempted to explain more than the evidence shows. Counting partly supported claims as half, the overall score is 98.0%. These are round 1 results, graded by me, the builder.</p>
+        <div class="callout">
+          <h3>Why claim support is the headline</h3>
+          <p>Fluency is easy to get from a language model. Whether each sentence is backed by the evidence it cites is what decides if a team can act on the answer, so that's what I measured.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="text">
+        <p class="eyebrow">What didn't work</p>
+        <h2>The misses weren't random</h2>
+        <p>The 10 statements that fell short, together with my notes on answers that were accurate but less useful than they should have been, traced back to six causes.</p>
+      </div>
+      <ul class="decisions">
+        <li>
+          <h3>Mixing updates</h3>
+          <p>One tool reported theme totals across all three updates of a game without saying so, and the agent used them to explain a single update.</p>
+        </li>
+        <li>
+          <h3>One voice treated as many</h3>
+          <p>"Some reviewers" or "others" was sometimes backed by a single review.</p>
+        </li>
+        <li>
+          <h3>Split themes</h3>
+          <p>Two near-duplicate weapon nerf themes, and the agent called one of them "the" theme.</p>
+        </li>
+        <li>
+          <h3>Unhelpful hedges</h3>
+          <p>"I can't confirm" when the answer was in the data, because the tool only returned the six biggest changes.</p>
+        </li>
+        <li>
+          <h3>Raw counts versus shares</h3>
+          <p>Before and after samples differ in size, so a count can rise while a theme's share of the conversation falls.</p>
+        </li>
+        <li>
+          <h3>Exact names only</h3>
+          <p>A short patch name like "Escalation of Freedom" failed, which cost the agent a retry.</p>
+        </li>
+      </ul>
+      <div class="text" style="margin-top:40px">
+        <p>All six are fixed for round 2: the tools now label the scope of every number and return every theme for an update, near-duplicate themes are merged, and the agent has explicit rules for wording and numbers. Round 2 reruns the same 30 questions with the same grading rules, so the two rounds give a fair before and after. Results will be added here.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-soft">
+    <div class="wrap two-col">
+      <div class="text">
+        <p class="eyebrow">Guardrails</p>
+        <h2>Built for public data written by strangers</h2>
+        <p>Reviews are written by anyone, so Sift treats them as evidence only, and it's open to the public, so cost has hard limits.</p>
+      </div>
+      <ul class="checklist">
+        <li>Every claim needs a citation, and citations are checked by code</li>
+        <li>Reviews reach the model as quoted, untrusted text; instructions inside them are never followed</li>
+        <li>Reviewer usernames and profile IDs are never stored or shown</li>
+        <li>Caps on tool rounds and tokens per question</li>
+        <li>A small number of live questions per visitor</li>
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="text">
+        <p class="eyebrow">Rollout</p>
+        <h2>How I'd roll it out in a real studio</h2>
+      </div>
+      <ul class="decisions">
+        <li>
+          <h3>Start with one team, one update</h3>
+          <p>A live game team's PM and community manager, for the four weeks around one update. They have the sharpest need and give the fastest feedback.</p>
+        </li>
+        <li>
+          <h3>Measure adoption and trust</h3>
+          <p>Weekly active askers, share of questions answered without an analyst, time from patch to first written insight, and how often people click through to cited reviews. Plus a small weekly graded sample, so accuracy is tracked after launch, not just at launch.</p>
+        </li>
+        <li>
+          <h3>Set honest expectations</h3>
+          <p>Sift explains what reviews say, not what caused a change. A before and after comparison can't prove a patch caused a shift, and Sift says so in its answers.</p>
+        </li>
+        <li>
+          <h3>Retire the old tools gradually</h3>
+          <p>Run Sift alongside the existing tagging dashboard for one update cycle, move the saved queries teams actually use, then switch the old tool to read-only before shutting it down.</p>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section-soft">
+    <div class="wrap"><div class="text">
+      <p class="eyebrow">What's next</p>
+      <h2>Where Sift goes from here</h2>
+      <ul class="checklist">
+        <li><strong>Round 2 eval.</strong> The same 30 questions after the six fixes, graded the same way.</li>
+        <li><strong>An Eval page in the app</strong>, so anyone can see the results next to the answers.</li>
+        <li><strong>A second dataset.</strong> Failed CI runs from the Godot game engine's public GitHub history, classified by root cause and graded against 30 hand labels.</li>
+      </ul>
+    </div></div>
+  </section>
+
+  <section>
+    <div class="wrap"><div class="text">
+      <p class="eyebrow">Try it</p>
+      <h2>Ask it something</h2>
+      <p>Sift is live. Ask why players turned on an update, then check the cited reviews yourself.</p>
+      <div class="buttons">
+        <a class="btn btn-primary" href="https://sift-insights.streamlit.app/" target="_blank" rel="noopener">Open Sift</a>
+        <a class="btn" href="https://github.com/nkiruanizoba/sift" target="_blank" rel="noopener">Read the code on GitHub</a>
+      </div>
+    </div></div>
+  </section>
+
+</main>
+
+<footer id="contact" class="site-footer">
+  <div class="wrap">
+    <h2>Let's talk.</h2>
+    <div class="footer-links">
+      <a href="mailto:nkiruanizoba@gmail.com">nkiruanizoba@gmail.com</a>
+      <a href="https://www.linkedin.com/in/nkiruanizoba" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="/">Home</a>
+    </div>
+    <p class="fine">&copy; 2026 Nkiru Anizoba</p>
+  </div>
+</footer>
+
+</body>
+</html>

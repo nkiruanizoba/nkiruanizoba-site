@@ -31,7 +31,7 @@
 <main>
 
   <section class="case-hero">
-    <div class="wrap case-hero-grid">
+    <div class="wrap">
       <div>
         <a class="back" href="/#independent">&larr; All projects</a>
         <p class="eyebrow">Case study</p>
@@ -48,13 +48,9 @@
           <a class="btn" href="https://github.com/nkiruanizoba/sift" target="_blank" rel="noopener">See the code</a>
         </div>
       </div>
-      <div class="card">
-        <p class="label">Example answer, from the eval</p>
-        <p style="margin-bottom:10px"><strong>Why did Helldivers 2 players become less positive after Escalation of Freedom?</strong></p>
-        <p style="margin-bottom:10px">Positive reviews fell from 85.5% before the update to 66.2% after. The reviews point mainly to weapon nerfs and distrust of the developers' balance direction <code>[stats]</code>.</p>
-        <p style="margin-bottom:16px">Players say nerfs are pointless in a PvE game <code>[steam:553850:172139104]</code>.</p>
-        <p class="label" style="margin:0">Every ID points to a real review in the dataset</p>
-      </div>
+      <figure class="app-shot">
+        <img src="../assets/sift-app.png" alt="The Sift app: a question box above cards showing the biggest swing in positive reviews after an update for each of three games">
+      </figure>
     </div>
   </section>
 
@@ -85,7 +81,7 @@
         <p class="eyebrow">Who it's for</p>
         <h2>The people who need the answer the week after a patch</h2>
       </div>
-      <div class="cards">
+      <div class="cards cards-2">
         <div class="card">
           <p class="label">Live ops PM</p>
           <h3>"Why did reviews turn negative?"</h3>
@@ -95,11 +91,6 @@
           <p class="label">Community manager</p>
           <h3>"What are players saying, in their words?"</h3>
           <p>Needs real quotes, not summaries, before responding publicly to an unpopular change.</p>
-        </div>
-        <div class="card">
-          <p class="label">Engineering lead (next dataset)</p>
-          <h3>"Which build failures are real?"</h3>
-          <p>Needs to separate real regressions from flaky tests. Same platform, pointed at public CI data.</p>
         </div>
       </div>
     </div>
@@ -135,7 +126,7 @@
         <div class="stat"><div class="value">30</div><div class="desc">questions, graded statement by statement</div></div>
       </div>
       <div class="text">
-        <h3>Round 1 results by question type</h3>
+        <h3>Results by question type</h3>
         <table class="before-after">
           <thead><tr><th>Question type</th><th>Claims graded</th><th>Fully supported</th></tr></thead>
           <tbody>
@@ -145,7 +136,7 @@
             <tr><td>Can't be answered from the data</td><td>27</td><td>100%</td></tr>
           </tbody>
         </table>
-        <p>"Why" answers were the weakest, which fits: that's where an agent is most tempted to explain more than the evidence shows. Counting partly supported claims as half, the overall score is 98.0%. These are round 1 results, graded by me, the builder.</p>
+        <p>"Why" answers were the weakest, which fits: that's where an agent is most tempted to explain more than the evidence shows. Counting partly supported claims as half, the overall score is 98.0%. All statements were graded by me, the builder.</p>
         <div class="callout">
           <h3>Why claim support is the headline</h3>
           <p>Fluency is easy to get from a language model. Whether each sentence is backed by the evidence it cites is what decides if a team can act on the answer, so that's what I measured.</p>
@@ -188,7 +179,7 @@
         </li>
       </ul>
       <div class="text" style="margin-top:40px">
-        <p>All six are fixed for round 2: the tools now label the scope of every number and return every theme for an update, near-duplicate themes are merged, and the agent has explicit rules for wording and numbers. Round 2 reruns the same 30 questions with the same grading rules, so the two rounds give a fair before and after. Results will be added here.</p>
+        <p>All six are now fixed: the tools label the scope of every number and return every theme for an update, near-duplicate themes are merged, and the agent has explicit rules for wording and numbers. The next eval rerun uses the same 30 questions and grading rules, so the before and after comparison is fair. Results will be added here.</p>
       </div>
     </div>
   </section>
@@ -242,9 +233,9 @@
       <p class="eyebrow">What's next</p>
       <h2>Where Sift goes from here</h2>
       <ul class="checklist">
-        <li><strong>Round 2 eval.</strong> The same 30 questions after the six fixes, graded the same way.</li>
+        <li><strong>Next: extending Sift to engineering data.</strong> The same platform, pointed at failed CI runs from the Godot game engine's public GitHub history. Instead of asking why players turned on an update, an engineering lead can ask which build failures are real regressions and which are flaky tests. Each failure is classified by root cause and checked against 30 hand labels.</li>
+        <li><strong>Rerun the eval.</strong> The same 30 questions after the six fixes, graded the same way.</li>
         <li><strong>An Eval page in the app</strong>, so anyone can see the results next to the answers.</li>
-        <li><strong>A second dataset.</strong> Failed CI runs from the Godot game engine's public GitHub history, classified by root cause and graded against 30 hand labels.</li>
       </ul>
     </div></div>
   </section>

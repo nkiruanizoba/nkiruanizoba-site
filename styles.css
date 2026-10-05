@@ -101,11 +101,21 @@ p { margin: 0 0 1em; }
 }
 
 .logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
   font-family: var(--serif);
   font-size: 1.3rem;
   font-weight: 600;
   color: var(--ink);
   text-decoration: none;
+  white-space: nowrap;
+}
+
+.logo img {
+  width: 30px;
+  height: 30px;
+  flex-shrink: 0;
 }
 
 .nav {
@@ -622,6 +632,13 @@ section + section { border-top: 1px solid var(--line); }
   .steps,
   .stats { grid-template-columns: 1fr; }
   .nav a.hide-sm { display: none; }
+  .logo { font-size: 1.15rem; gap: 8px; }
+  .logo img { width: 26px; height: 26px; }
+  .nav { gap: 16px; }
+}
+
+@media (max-width: 360px) {
+  .logo img { display: none; }
 }
 
 /* Impact line on work cards */
@@ -709,3 +726,11 @@ section + section { border-top: 1px solid var(--line); }
 }
 .app-shot img { display: block; width: 100%; height: auto; }
 @media (max-width: 860px) { .app-shot { padding: 12px; margin-top: 32px; } }
+
+/* Keep the header on one line on phones (5 nav links) */
+@media (max-width: 480px) {
+  .site-header .wrap { gap: 10px; }
+  .nav { gap: 12px; font-size: 0.88rem; }
+  .logo { font-size: 1.05rem; gap: 6px; }
+  .logo img { width: 22px; height: 22px; }
+}

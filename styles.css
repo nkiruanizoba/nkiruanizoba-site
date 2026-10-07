@@ -150,11 +150,16 @@ section + section { border-top: 1px solid var(--line); }
 }
 
 .portrait {
+  display: block;
   width: 210px;
-  aspect-ratio: 4 / 5;
-  border-radius: 14px;
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
   object-fit: cover;
+  object-position: 50% 12%;
   background: var(--accent-soft);
+  /* cream gap, then a thin terracotta ring that echoes the "N." logo */
+  border: 5px solid var(--bg);
+  box-shadow: 0 0 0 2px var(--accent);
 }
 
 .portrait-placeholder {
